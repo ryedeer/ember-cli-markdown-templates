@@ -1,27 +1,22 @@
 # ember-cli-markdown-templates
 
-This README outlines the details of collaborating on this Ember addon.
+This addon allows you to use [Markdown](http://daringfireball.net/projects/markdown/) format
+to write templates in your Ember applications. This can be useful for help sections,
+documentation, etc.
+
+Once this addon is installed, you can just place templates written in Markdown into the usual
+template locations as files with `.md` or `.markdown` extension. These templates will be converted
+to the regular '.hbs' format at the build time. Actually, you can even use HTMLBars helpers in your
+Markdown templates.
+
+To convert Markdown templates, this addon uses the [Showdown](https://github.com/showdownjs/showdown)
+library.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-markdown-templates`
-* `npm install`
-* `bower install`
+* `ember install ember-cli-markdown-templates`
 
-## Running
+## Ember-CLI support
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+Tested with Ember-CLI 2.11. Should be compatible at least with Ember-CLI 2.4 and above,
+maybe with older versions too.

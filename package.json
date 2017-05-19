@@ -1,24 +1,27 @@
 {
   "name": "ember-cli-markdown-templates",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Use Markdown to write ember-cli templates.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "markdown"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "ryedeer",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/ryedeer/ember-cli-markdown-templates",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^5.1.7"
+    "ember-cli-babel": "^5.1.7",
+    "broccoli-filter": "^1.2.2",
+    "showdown": "^1.6.4"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -36,7 +39,6 @@
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "^2.11.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
@@ -49,6 +51,9 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "before": [
+      "ember-cli-htmlbars"
+    ]
   }
 }
