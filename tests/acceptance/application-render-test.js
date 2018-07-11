@@ -1,26 +1,16 @@
-import Ember from 'ember';
 import { module, test } from 'qunit';
-import startApp from '../helpers/start-app';
+import { setupApplicationTest } from 'ember-qunit';
+import { visit } from '@ember/test-helpers';
 
-var application;
+module('Acceptance: Application Render Test', function(hooks) {
+  setupApplicationTest(hooks);
 
-module('Acceptance: Application Render Test', {
-  beforeEach: function() {
-    application = startApp();
-  },
+  test('rendering a markdown template', async function(assert) {
+    assert.expect(2);
 
-  afterEach: function() {
-    Ember.run(application, 'destroy');
-  }
-});
+    await visit('/');
 
-test('rendering a markdown template', function(assert) {
-  assert.expect(2);
-
-  visit('/');
-
-  andThen(function() {
-    assert.equal(Ember.$('h1#hello').html(),"Hello!");
-    assert.equal(Ember.$('h1#hello ~ p').html(), "This is <code>ember-cli-markdown-templates</code>.");
+    assert.dom('h1#hello').hasText("Hello!");
+    assert.equal(this.element.querySelector('h1#hello ~ p').innerHTML, "This is <code>ember-cli-markdown-templates</code>.");
   });
 });
