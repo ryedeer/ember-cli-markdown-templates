@@ -21,12 +21,14 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "broccoli-filter": "^1.2.2",
+    "broccoli-stew": "^2.0.0",
     "ember-cli-babel": "^6.6.0",
-    "showdown": "^1.6.4"
+    "highlightjs": "^9.10.0",
+    "marked": "^0.5.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",
+    "broccoli-stew": "^2.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.2.0",
     "ember-cli-dependency-checker": "^2.0.0",
