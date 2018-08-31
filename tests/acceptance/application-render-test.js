@@ -10,7 +10,7 @@ module('Acceptance: Application Render Test', function(hooks) {
 
     await visit('/');
 
-    assert.dom('h1#hello').hasText("Hello!");
-    assert.equal(this.element.querySelector('h1#hello ~ p').innerHTML, "This is <code>ember-cli-markdown-templates</code>.");
+    assert.dom('h1#header-hello-').hasText('Hello!');
+    assert.equal(this.element.querySelector('h1#header-hello- ~ p').innerHTML, "This is <code>ember-cli-markdown-templates</code>.");
   });
 });
