@@ -2,7 +2,7 @@
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     'ember-cli-markdown-templates': {
@@ -10,9 +10,9 @@ module.exports = function(defaults) {
       syntaxHighlight: true,
       linkifyHeadings: true,
       markedOptions: {
-        headerPrefix: 'header-'
-      }
-    }
+        headerPrefix: 'header-',
+      },
+    },
   });
 
   /*
@@ -24,5 +24,12 @@ module.exports = function(defaults) {
 
   app.import('node_modules/highlightjs/styles/default.css');
 
-  return app.toTree();
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-cli-markdown-templates',
+  name: require('./package').name,
 
   setupPreprocessorRegistry(type, registry) {
     if (type === 'parent') {
@@ -9,5 +9,5 @@ module.exports = {
       let TemplateCompiler = require('./lib/markdown-template-compiler');
       registry.add('template', new TemplateCompiler(options));
     }
-  }
+  },
 };

@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line node/no-unpublished-require
 const QUnit = require('qunitjs'),
   test = QUnit.test,
   testModule = QUnit.module;
@@ -7,7 +8,7 @@ const compileMarkdown = require('../../lib/compile-markdown');
 
 testModule('Unit | Markdown Compiler');
 
-test('should compact code with yield', function(assert) {
+test('should compact code with yield', function (assert) {
   const code = `
   ### Sample h3
 
@@ -50,7 +51,7 @@ test('should compact code with yield', function(assert) {
   assert.equal(compiled, html);
 });
 
-test('should compact code with yield and inline html in paragraph', function(assert) {
+test('should compact code with yield and inline html in paragraph', function (assert) {
   const code = `
   ### Sample h3
 
@@ -100,7 +101,7 @@ test('should compact code with yield and inline html in paragraph', function(ass
   assert.equal(compiled, html);
 });
 
-test('should compact paragraphs without yield', function(assert) {
+test('should compact paragraphs without yield', function (assert) {
   const code = `
   ### Sample h3
 

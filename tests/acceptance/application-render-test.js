@@ -2,15 +2,18 @@ import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit } from '@ember/test-helpers';
 
-module('Acceptance: Application Render Test', function(hooks) {
+module('Acceptance: Application Render Test', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('rendering a markdown template', async function(assert) {
+  test('rendering a markdown template', async function (assert) {
     assert.expect(2);
 
     await visit('/');
 
     assert.dom('h1#header-hello-').hasText('Hello!');
-    assert.equal(this.element.querySelector('h1#header-hello- ~ p').innerHTML, "This is <code>ember-cli-markdown-templates</code>.");
+    assert.equal(
+      this.element.querySelector('h1#header-hello- ~ p').innerHTML,
+      'This is <code>ember-cli-markdown-templates</code>.'
+    );
   });
 });
